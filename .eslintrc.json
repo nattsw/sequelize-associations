@@ -1,0 +1,49 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "codeceptjs/codeceptjs": true,
+        "jest/globals": true
+    },
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+            "legacyDecorators": true
+        }
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:security/recommended"
+    ],
+    "plugins": [
+        "security",
+        "codeceptjs",
+        "jest"
+    ],
+    "rules": {
+        "comma-dangle": ["error", "never"],
+        "complexity": ["warn", 20],
+        "no-plus-plus": "off",
+        "quotes": ["error", "double"],
+        "no-underscore-dangle": "off",
+        "object-curly-newline": "off",
+        "security/detect-object-injection": "off",
+        "linebreak-style": "off",
+        "no-multiple-empty-lines": ["error", {"max": 1}]
+    },
+    "overrides": [
+        {
+            "files": [ "*.js" ],
+            "excludedFiles": "*.test.js",
+            "rules": {
+                "max-len": ["error", { "code": 120 }]
+            }
+        }
+    ]
+}
